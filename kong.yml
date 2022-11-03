@@ -1,0 +1,18 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: luarocks
+    url: http://127.0.0.1:7080
+    routes:
+      - name: root
+        paths:
+          - /
+    plugins:
+      - name: basic-auth
+
+consumers:
+  - username: luarocks_consumer
+    basicauth_credentials:
+      - username: luarocks
+        password: s3cr3t
